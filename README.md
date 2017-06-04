@@ -6,8 +6,6 @@ Keycombo.js is a easy to use JavaScript library, which makes handling key combin
 
 ## Using keycombo.js
 
-Using KeyCombo.js
-
 First, include KeyCombo.js in your HTML page like this:
 
 ```HTML
