@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ea3e49">
+<meta charset="utf-8">
+<title>KeyCombo.js</title>
+<link rel="stylesheet" href="keycombo.css"></head><body>
+<div class="screenborder"></div>
+<div id="container">
+<h1>KeyCombo.js</h1>
+<p>KeyCombo.js is a lightweight and flexible JavaScript libraries for checking
+key combinations. No need to remember a single key code!</p>
+<h2>Get KeyCombo.js</h2>
+<div class="buttons">
+<a href="::$[[GITHUB/jonaskohl/keycombo.js/releases/latest]]" class="button">Download</a>
+<a href="https://github.com/jonaskohl/keycombo.js" class="button">View source</a>
+</div>
+<h2>Using KeyCombo.js</h2>
+<p>
+First, include KeyCombo.js in your HTML page like this:
+<div class="codeblock">
+<span class="codeblock-lang">HTML</span>
+<pre><span class="tg">&lt;script</span> <span class="ta">type</span><span class="br">=</span><span class="tv">&quot;application/javascript&quot;</span> <span class="ta">src</span><span class="br">=</span><span class="tv">&quot;path/to/KeyCombo.js&quot;</span><span class="tg">&gt;&lt;/script&gt;</span></pre>
+</div>
+Add a <pre class="inline">keydown</pre> event listener on an element (eg. the <pre class="inline">window</pre> or an <pre class="inline">input</pre>).
+Make sure to pass the event argument to the callback function.
+Then, in the callback function, you can check for a key combo like this:
+<div class="codeblock">
+<span class="codeblock-lang">JavaScript</span>
+<pre><span class="kw">var</span> yourComboString <span class="br">=</span> <span class="st">&quot;CTRL ALT F&quot;</span><span class="br">,</span> <span class="cm">// The key combination to check for, not case sensitive</span>
+    keyReturnObject <span class="br">=</span> KeyComboJS.parseKeyCode<span class="br">(</span>yourComboString<span class="br">);</span> <span class="cm">// Parse the string into an object</span>
+<span class="kw">if</span> <span class="br">(</span>KeyComboJS.testForKeyCombo<span class="br">(</span>event<span class="br">,</span> keyReturnObject<span class="br">)) {</span> <span class="cm">// Check if the key combination is pressed, where &quot;event&quot; is your event variable. Returns either true or false</span>
+    <span class="cm">// The key combination was pressed</span>
+<span class="br">}</span></pre>
+</div>
+</p>
+<h2>Generate keycombo string</h2>
+<p>Here you can choose the keys for KeyCombo.js</p>
+<label><input type="checkbox" id="ctrlKey"> Ctrl</label>
+<label><input type="checkbox" id="altKey"> Alt</label>
+<label><input type="checkbox" id="shiftKey"> Shift</label>
+<label><input type="checkbox" id="superKey"> Super (Windows/Command)</label>
+<select id="keyCodes">
+<option selected disabled hidden value="">Select key</option>
+</select>
+<br>
+<label><input type="checkbox" id="preventDefault"> Enable <code>event.preventDefault();</code></label>
+<br>
+<span id="keycombo" style="display: none;"></span>
+<br>
+<span id="isKeyDown">Not pressed</span>
+<footer></footer>
+</div>
+<script src="keycombo.js"></script>
+<script src="page.js"></script>
+</body></html>
