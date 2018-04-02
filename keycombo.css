@@ -36,9 +36,9 @@ body {
     width: 100%;
 }
 pre {
-    -webkit-user-select: initial;
-    -moz-user-select: initial;
-    cursor: initial;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    cursor: auto;
     font-size: 10pt;
     margin: 0;
     font-family: "Source Code Pro", monospace;
